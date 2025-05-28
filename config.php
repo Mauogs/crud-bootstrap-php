@@ -20,4 +20,6 @@ define('HEADER_TEMPLATE', ABSPATH . 'inc/header.php');
 define('FOOTER_TEMPLATE', ABSPATH . 'inc/footer.php');
 
 define("PDF", ABSPATH . 'inc/pdf.php');
+
+define("COOKIE_TEMPLATE", ABSPATH . "inc/cookiemodal.php");
 ?>
