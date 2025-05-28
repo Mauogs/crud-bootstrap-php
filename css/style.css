@@ -1,0 +1,157 @@
+body {
+    background-color: #f7f7f7;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header h2 {
+    font-weight: bold;
+    color: #333;
+}
+
+.img-preview,
+.img-fluid {
+    max-width: 300px;
+    margin: 15px auto;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.table-responsive {
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th,
+table td {
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+}
+
+@media (max-width: 768px) {
+
+    table th,
+    table td {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .actions a {
+        display: block;
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    table th,
+    table td {
+        font-size: 0.8rem;
+        padding: 6px;
+    }
+}
+
+.nav-link {
+    color: #fff !important;
+    transition: color 0.2s;
+}
+
+.nav-link:hover {
+    color: #ccc !important;
+}
+
+.btn {
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.btn-light {
+    background-color: #d6d8db;
+    border-color: #c8cbcf;
+}
+
+.btn-light:hover {
+    background-color: #999999;
+    border-color: #666;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #565e64;
+    border-color: #4e555b;
+}
+
+.alert {
+    margin: 20px auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+@media (max-width: 576px) {
+
+    .dropdown-menu-end[aria-labelledby="loginDropdown"],
+    .dropdown-menu-end[aria-labelledby="userDropdown"] {
+        width: 100vw !important;
+        left: 0 !important;
+        right: 0 !important;
+        margin: auto;
+        border-radius: 0;
+    }
+}
+
+/* Cor de fundo para os itens da paginação */
+.pagination .page-item {
+    background-color: #d3d3d3;
+    /* Cor cinza claro */
+}
+
+/* Cor de fundo quando a página estiver ativa */
+.pagination .page-item.active {
+    background-color: #a9a9a9;
+    /* Cor cinza mais escura para o item ativo */
+}
+
+/* Cor da fonte dos links */
+.pagination .page-link {
+    color: #000;
+    /* Cor preta para o texto */
+}
+
+/* Alterar a cor ao passar o mouse sobre os links */
+.pagination .page-item:hover {
+    background-color: #b0b0b0;
+    /* Um cinza intermediário ao passar o mouse */
+}
+
+/* Cor para o link "Anterior" e "Próxima" */
+.pagination .page-item a {
+    color: #000;
+    /* Cor preta */
+}
+
+.pagination .page-item.active a {
+    color: #fff;
+    /* Cor branca para o texto quando ativo */
+}
