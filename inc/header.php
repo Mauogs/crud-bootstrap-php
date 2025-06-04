@@ -19,6 +19,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <link rel="stylesheet" href="<?= BASEURL ?>css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="<?= BASEURL ?>css/fontawesome/all.min.css">
     <link rel="stylesheet" href="<?= BASEURL ?>css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.css" />
 </head>
 
 <body>

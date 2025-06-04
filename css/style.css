@@ -121,37 +121,55 @@ table td {
     }
 }
 
-/* Cor de fundo para os itens da paginação */
 .pagination .page-item {
     background-color: #d3d3d3;
-    /* Cor cinza claro */
 }
 
-/* Cor de fundo quando a página estiver ativa */
 .pagination .page-item.active {
     background-color: #a9a9a9;
-    /* Cor cinza mais escura para o item ativo */
 }
 
-/* Cor da fonte dos links */
 .pagination .page-link {
     color: #000;
-    /* Cor preta para o texto */
 }
 
-/* Alterar a cor ao passar o mouse sobre os links */
 .pagination .page-item:hover {
     background-color: #b0b0b0;
-    /* Um cinza intermediário ao passar o mouse */
 }
 
-/* Cor para o link "Anterior" e "Próxima" */
 .pagination .page-item a {
     color: #000;
-    /* Cor preta */
 }
 
 .pagination .page-item.active a {
     color: #fff;
-    /* Cor branca para o texto quando ativo */
+}
+
+#cookie-details-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+#cookie-details-modal h2 {
+    margin-top: 0;
+}
+
+#cookie-details-modal button {
+    margin-top: 15px;
+    background: #cccc;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
 }
