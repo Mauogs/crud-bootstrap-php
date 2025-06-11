@@ -59,6 +59,10 @@ function add()
     if (!empty($_POST['usuario'])) {
         try {
             $usuario = $_POST['usuario'];
+            $hoje = new DateTime("now", new DateTimeZone("America/Sao_Paulo"));
+            $dataAtual = $hoje->format("Y-m-d H:i:s");
+            $usuario['datacad'] = $dataAtual;
+            $usuario['modificacao'] = $dataAtual;
 
             if (!empty($_FILES["foto"]["name"])) {
                 $destino = "fotos/";
