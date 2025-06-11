@@ -9,7 +9,7 @@ function index()
 {
     global $carros;
 
-    $pagina = isset($_GET['pagina']) ? (int)$_GET['pagina'] : 1;
+    $pagina = isset($_GET['pagina']) ? (int) $_GET['pagina'] : 1;
     $porPagina = 10;
     $offset = ($pagina - 1) * $porPagina;
 
@@ -140,11 +140,14 @@ function delete($id = null)
     global $carros;
 
     if ($id) {
-        $carro = find('carros', intval($id));
+        $carro = find('carro', intval($id));
 
         if (!empty($carro['foto']) && $carro['foto'] !== 'semimagem.png') {
             $caminhoFoto = "fotos/" . $carro['foto'];
-            if (file_exists($caminhoFoto)) {
+
+            $mesmaFotoUsadaPorOutros = filter("carros", "foto = '{$carro['foto']}' AND id != {$carro['id']}");
+
+            if (empty($mesmaFotoUsadaPorOutros) && file_exists($caminhoFoto)) {
                 @unlink($caminhoFoto);
             }
         }
@@ -186,7 +189,7 @@ function pdf_carros($p = null)
         if (!is_file($foto)) {
             $foto = "fotos/semimagem.png";
         }
-        $pdf->Image($foto, $x + 5, $y + 5, 20, 20);        
+        $pdf->Image($foto, $x + 5, $y + 5, 20, 20);
 
         $pdf->Ln();
     }

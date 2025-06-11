@@ -61,8 +61,6 @@ function add()
             $usuario = $_POST['usuario'];
             $hoje = new DateTime("now", new DateTimeZone("America/Sao_Paulo"));
             $dataAtual = $hoje->format("Y-m-d H:i:s");
-            $usuario['datacad'] = $dataAtual;
-            $usuario['modificacao'] = $dataAtual;
 
             if (!empty($_FILES["foto"]["name"])) {
                 $destino = "fotos/";
@@ -95,16 +93,16 @@ function edit()
 
             if (isset($_POST['usuario'])) {
                 $dadosForm = $_POST['usuario'];
-				$usuarioExistente = find('usuarios', $id);
+                $usuarioExistente = find('usuarios', $id);
 
-				if (!empty($dadosForm['senha'])) {
-					$usuario['senha'] = $dadosForm['senha'];
-				} else {
-					$usuario['senha'] = $usuarioExistente['senha'];
-				}
+                if (!empty($dadosForm['senha'])) {
+                    $usuario['senha'] = $dadosForm['senha'];
+                } else {
+                    $usuario['senha'] = $usuarioExistente['senha'];
+                }
 
-				$usuario['nome'] = $dadosForm['nome'];
-				$usuario['usuario'] = $dadosForm['usuario'];
+                $usuario['nome'] = $dadosForm['nome'];
+                $usuario['usuario'] = $dadosForm['usuario'];
 
 
                 if (!empty($_FILES["foto"]["name"])) {
@@ -154,7 +152,10 @@ function delete($id = null)
 
         if (!empty($usuario['foto']) && $usuario['foto'] !== 'semimagem.png') {
             $caminhoFoto = "fotos/" . $usuario['foto'];
-            if (file_exists($caminhoFoto)) {
+
+            $mesmaFotoUsadaPorOutros = filter("usuarios", "foto = '{$usuario['foto']}' AND id != {$usuario['id']}");
+
+            if (empty($mesmaFotoUsadaPorOutros) && file_exists($caminhoFoto)) {
                 @unlink($caminhoFoto);
             }
         }

@@ -140,11 +140,14 @@ function delete($id = null)
     global $clientes;
 
     if ($id) {
-        $cliente = find('clientes', intval($id));
+        $cliente = find('cliente', intval($id));
 
         if (!empty($cliente['foto']) && $cliente['foto'] !== 'semimagem.png') {
             $caminhoFoto = "fotos/" . $cliente['foto'];
-            if (file_exists($caminhoFoto)) {
+
+            $mesmaFotoUsadaPorOutros = filter("clientes", "foto = '{$cliente['foto']}' AND id != {$cliente['id']}");
+
+            if (empty($mesmaFotoUsadaPorOutros) && file_exists($caminhoFoto)) {
                 @unlink($caminhoFoto);
             }
         }
